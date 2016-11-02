@@ -1,0 +1,10 @@
+# Node Modules for testing
+node_modules
+
+# Backups
+*sw[a-z]
+*~
+
+# OS garbage
+.DS_Store
+Thumbs.db
