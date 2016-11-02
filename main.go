@@ -25,20 +25,25 @@ func judge(input string) (flag, error) {
 
 	var nabeatsu flag
 
+	// int に変換
 	num, err := strconv.Atoi(input)
 	if err != nil {
+		// 変換できなかったら文字である
 		return nabeatsu, err
 	}
 
+	// 3の倍数か判定
 	if num%3 == 0 {
 		nabeatsu.idiot = true
 	}
 
+	// 3が入っているか判定
 	stupidNum := regexp.MustCompile("[0-9]*3+[0-9]*")
 	if stupidNum.MatchString(input) {
 		nabeatsu.stupid = true
 	}
 
+	// 3の倍数かつ3が含まれるか判定
 	if nabeatsu.idiot && nabeatsu.stupid {
 		nabeatsu.dumb = true
 	}
